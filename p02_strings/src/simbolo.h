@@ -31,7 +31,8 @@ class Simbolo {
   friend std::istream& operator>>(std::istream& in, Simbolo& simbolo);
 
   bool operator<(const Simbolo& simbolo_a_comparar) const;
-
+  bool operator==(const Simbolo& simbolo_a_comparar) const;
+  bool operator!=(const Simbolo& simbolo_a_comparar) const;
  private:
   char simbolo_;
 };

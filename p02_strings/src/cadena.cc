@@ -50,7 +50,7 @@ std::ostream& operator<<(std::ostream& out, const Cadena& cadena) {
   if (cadena.LongitudCadena() == 0) {
     out << CADENA_VACIA;
   } else {
-    for (Simbolo simbolo_aux : cadena.get_cadena()) {
+    for (Simbolo simbolo_aux : cadena.cadena_) {
       out << simbolo_aux;
     }
   }
@@ -88,7 +88,16 @@ std::istream& operator>>(std::istream& in, Cadena& cadena) {
  */
 
 bool Cadena::operator<(const Cadena& cadena_a_comparar) const {
-    return (LongitudCadena() < cadena_a_comparar.LongitudCadena());
+  if (LongitudCadena() != cadena_a_comparar.LongitudCadena()) {
+    return LongitudCadena() < cadena_a_comparar.LongitudCadena();
+  } else  {
+    for (int i{0}; i < LongitudCadena(); i++) {
+      if (DevolverPosicion(i) != cadena_a_comparar.DevolverPosicion(i)) {
+        return DevolverPosicion(i) < cadena_a_comparar.DevolverPosicion(i);
+      }
+    }
+  }
+  return false;
 }
 
 /*

@@ -47,7 +47,7 @@ void Alfabeto::InsertarSimbolo(const Simbolo& simobolo_a_agregar) {
 std::ostream& operator<<(std::ostream& out, const Alfabeto& alfabeto) {
   int contador_aux{0};
   out << '{';
-  for (Simbolo simbolo_aux : alfabeto.get_alfabeto()) {
+  for (Simbolo simbolo_aux : alfabeto.alfabeto_) {
     if (contador_aux > 0) {
       out << ", ";
     }

@@ -18,9 +18,7 @@
 // Historial de revisiones
 // 21/09/2024 - Creacion (primera version) del codigo
 
-#include <iostream>
 #include "lenguaje.h"
-
 
 /*
  * Metodo que inserta una cadena nueva en el lenguaje. 
@@ -46,7 +44,7 @@ void Lenguaje::InsertarCadena(const Cadena& cadena_a_agregar) {
 std::ostream& operator<<(std::ostream& out, const Lenguaje& lenguaje) {
   out << '{'; 
   int contador_aux{0};
-  for (Cadena cadena_auxiliar : lenguaje.get_lenguaje()) {
+  for (Cadena cadena_auxiliar : lenguaje.lenguaje_) {
     if (contador_aux > 0) {
       out << ", ";   
     }
@@ -55,4 +53,26 @@ std::ostream& operator<<(std::ostream& out, const Lenguaje& lenguaje) {
   }
   out << '}';
   return out;
+}
+
+/*
+ * Sobrecarga del operador de entrada ">>"" para la clase Lenguaje que permite 
+ * la lectura de un lenguaje a traves de un flujo de entrada, usando para eso
+ * distintas tecnicas de control de flujo.
+ *
+ * @param in (flujo de entrada).
+ *        lenguaje (lenguaje a leer).
+ * @return in (el flujo de entrada modificado).
+ */
+
+std::istream& operator>>(std::istream& in, Lenguaje& lenguaje) {
+  lenguaje.lenguaje_.clear();
+  std::string linea;
+  std::getline(in, linea);
+  std::istringstream linea_flujo(linea);
+  Cadena cadena_aux;
+  while (linea_flujo >> cadena_aux) {
+    lenguaje.InsertarCadena(cadena_aux);
+  }
+  return in;
 }

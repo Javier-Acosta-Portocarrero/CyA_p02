@@ -31,7 +31,7 @@
  */
 
 std::ostream& operator<<(std::ostream& out, const Simbolo& simbolo) {
-  out << simbolo.get_simbolo();
+  out << simbolo.simbolo_;
   return out;
 }
 
@@ -59,4 +59,28 @@ std::istream& operator>>(std::istream& in, Simbolo& simbolo) {
 
 bool Simbolo::operator<(const Simbolo& simbolo_a_comparar) const {
   return (static_cast<int>(get_simbolo()) < static_cast<int>(simbolo_a_comparar.get_simbolo()));
+}
+
+/*
+ * Sobrecarga del operador de comparacion de la clase Simbolo, este posibilita diferenciar
+ * si dos simbolos son iguales o no.
+ *
+ * @param simbolo_a_comparar (referencia al simbolo con el que se comparará el objeto original).
+ * @return true si ambos simbolos son iguales y false si no.
+ */
+
+bool Simbolo::operator==(const Simbolo& simbolo_a_comparar) const {
+  return (static_cast<int>(simbolo_) == static_cast<int>(simbolo_a_comparar.get_simbolo()));
+}
+
+/*
+ * Sobrecarga del operador de comparacion de la clase Simbolo, este posibilita diferenciar
+ * si dos simbolos son iguales o no.
+ *
+ * @param simbolo_a_comparar (referencia al simbolo con el que se comparará el objeto original).
+ * @return true si ambos simbolos no son iguales y false si si.
+ */
+
+bool Simbolo::operator!=(const Simbolo& simbolo_a_comparar) const {
+  return (static_cast<int>(simbolo_) != static_cast<int>(simbolo_a_comparar.get_simbolo()));
 }

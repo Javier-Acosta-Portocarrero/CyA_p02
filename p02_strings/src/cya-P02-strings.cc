@@ -22,6 +22,9 @@
 #include "funciones.h"
 
 int main(int argc, char *argv[]) {
+  // Lenguaje lenguaje_prueba;
+  // std::cin >> lenguaje_prueba;
+  // std::cout << lenguaje_prueba << std::endl;;
   if (argc != 4 && argc != 2) {
     MostrarErrorDeEntrada();
     return 1;

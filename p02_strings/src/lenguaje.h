@@ -18,13 +18,15 @@
 // Historial de revisiones
 // 21/09/2024 - Creacion (primera version) del codigo
 
-#include <iostream> 
+
 
 #ifndef LENGUAJE_H
 #define LENGUAJE_H
 
+#include <iostream> 
 #include <set>
 #include "cadena.h"
+#include "sstream"
 
 class Lenguaje {
  public:
@@ -35,6 +37,7 @@ class Lenguaje {
   void InsertarCadena(const Cadena& cadena_a_agregar);
 
   friend std::ostream& operator<<(std::ostream& out, const Lenguaje& lenguaje);
+  friend std::istream& operator>>(std::istream& in, Lenguaje& lenguaje);
 
  private:
   std::set<Cadena> lenguaje_;
