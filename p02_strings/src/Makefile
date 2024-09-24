@@ -12,6 +12,9 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
+%.o: %.cc
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 clean:
 	rm -f $(OBJECTS) $(TARGET)
 
