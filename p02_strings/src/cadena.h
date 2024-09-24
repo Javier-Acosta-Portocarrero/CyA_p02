@@ -16,11 +16,10 @@
 // Historial de revisiones
 // 21/09/2024 - Creacion (primera version) del codigo
 
-#include <iostream> 
-
 #ifndef CADENA_H
 #define CADENA_H
 
+#include <iostream> 
 #include <vector>
 #include "simbolo.h"
 

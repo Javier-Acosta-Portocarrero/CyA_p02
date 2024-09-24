@@ -22,7 +22,7 @@
 
 
 /*
- * Sobrecarga del operador de salida "<<" de la clase Simbolo, este imprime 
+ * @brief Sobrecarga del operador de salida "<<" de la clase Simbolo, este imprime 
  * el caracter ASCII que representa el simbolo.
  *
  * @param out (flujo de salida).
@@ -36,7 +36,7 @@ std::ostream& operator<<(std::ostream& out, const Simbolo& simbolo) {
 }
 
 /*
- * Sobrecarga del operador de entrada ">>" de la  clase Simbolo, el cual posibilita 
+ * @brief Sobrecarga del operador de entrada ">>" de la  clase Simbolo, el cual posibilita 
  * dar valor a un obejto Simbolo a traves de un flujo de entrada
  *
  * @param in (flujo de entrada) 
@@ -50,7 +50,7 @@ std::istream& operator>>(std::istream& in, Simbolo& simbolo) {
 }
 
 /*
- * Sobrecarga del operador de desigualdad menor "<"" de la clase Simbolo, este posibilita comparar dos objetos de tipo
+ * @brief Sobrecarga del operador de desigualdad menor "<", este posibilita comparar dos objetos de tipo
  * Simbolo, siendo el factor diferenciador el valor ASCII del caracter que los compone.
  *
  * @param simbolo_a_comparar (referencia al simbolo con el que se comparará el objeto original).
@@ -62,7 +62,7 @@ bool Simbolo::operator<(const Simbolo& simbolo_a_comparar) const {
 }
 
 /*
- * Sobrecarga del operador de comparacion de la clase Simbolo, este posibilita diferenciar
+ * @brief Sobrecarga del operador de comparacion, este posibilita diferenciar
  * si dos simbolos son iguales o no.
  *
  * @param simbolo_a_comparar (referencia al simbolo con el que se comparará el objeto original).
@@ -74,7 +74,7 @@ bool Simbolo::operator==(const Simbolo& simbolo_a_comparar) const {
 }
 
 /*
- * Sobrecarga del operador de comparacion de la clase Simbolo, este posibilita diferenciar
+ * @brief Sobrecarga del operador de desigualdad, este posibilita diferenciar
  * si dos simbolos son iguales o no.
  *
  * @param simbolo_a_comparar (referencia al simbolo con el que se comparará el objeto original).

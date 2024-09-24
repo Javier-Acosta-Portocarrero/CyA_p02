@@ -22,9 +22,8 @@
 #include "funciones.h"
 
 /*
- * Constructor de la clase IntermediarioFicheros. Este abre los ficheros de entrada 
- * y salida y da valor al opcode. Si el fichero de entrada o el de salida no se puede abrir
- * muestra un mensaje de error y acaba del programa.
+ * @brief Constructor de la clase IntermediarioFicheros. Este abre los ficheros de entrada 
+ * y salida y da valor al opcode. 
  *
  * @param fichero_entrada (nombre del fichero de entrada),
  *        fichero_salida (nombre del fichero de salida),
@@ -33,21 +32,13 @@
 
 IntermediarioFicheros::IntermediarioFicheros(std::string fichero_entrada, std::string fichero_salida, int opcode) : opcode_{opcode} {
   fichero_entrada_.open(fichero_entrada);
-  if (!fichero_entrada_.is_open()) {
-    std::cerr << "No se pudo abrir el fichero de entrada " << fichero_entrada << '.' << std::endl;
-    exit(EXIT_FAILURE);
-  }
   fichero_salida_.open(fichero_salida);
-  if (!fichero_salida_.is_open()) {
-    std::cerr << "No se pudo abrir el fichero de salida " << fichero_salida << '.' << std::endl;
-    fichero_entrada_.close();
-    exit(EXIT_FAILURE);
-  }
 }
 
 /*
- * Destructor de la clase IntermediarioFicheros, encargado de cerrar los ficheros de entrada 
+ * @breif Destructor de la clase IntermediarioFicheros, encargado de cerrar los ficheros de entrada 
  * y salida.
+ *
  */
 
 IntermediarioFicheros::~IntermediarioFicheros() {
@@ -55,8 +46,20 @@ IntermediarioFicheros::~IntermediarioFicheros() {
   fichero_salida_.close();
 }
 
+/**
+  * @brief Metodo encargado de comprobar que los fichero han sido abiertos correctamente
+  *
+  */
+
+bool IntermediarioFicheros::AbiertoCorrectamente() const {
+  if (!fichero_entrada_.is_open() || !fichero_salida_.is_open()) {
+    return false;
+  }
+  return true;
+}
+
 /*
- * Esta metodod lee línea por línea el fichero de entrada y dependiendo del opcode 
+ * @brief Esta metodod lee línea por línea el fichero de entrada y dependiendo del opcode 
  * realiza una "operación" específica sobre la cadena y/o alfabeto leídos en cada linea línea.
  * Operaciones disponibles dependiendo del valor del opcode:
  *    1.  Mostrar el alfabeto de cada linea.

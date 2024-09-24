@@ -21,7 +21,7 @@
 #include <iostream>
 
 /*
- * Esta función muestra un mensaje de error cuando el usuario no proporciona
+ * @brief Esta función muestra un mensaje de error cuando el usuario no proporciona
  * la entrada correcta a través de la línea de comandos. Además, indica como obtener
  * ayuda sobre el uso del programa.
  *
@@ -34,7 +34,7 @@ void MostrarErrorDeEntrada() {
 }
 
 /*
- * Esta función muestra un mensaje de ayuda que describe que parametros se deben 
+ * @brief Esta función muestra un mensaje de ayuda que describe que parametros se deben 
  * poner para la ejecución del programa y el significado de los distintos opcode.
  *
  * @return No devuelve ningún valor.
@@ -48,7 +48,7 @@ void MostrarMensajeDeAyuda() {
 }
 
 /*
- * Esta función genera todos los sufijos posibles de una cadena dada. Siendo estos
+ * @brief Esta función genera todos los sufijos posibles de una cadena dada. Siendo estos
  * cualquier subcadena de la original cuyo ultimo simbolo sea el ultimo de la cadena original.
  * Los sufijos generados se almacenan en un lenguaje para facilitar su impresion.
  *
@@ -71,7 +71,7 @@ Lenguaje GenerarSufijos(const Cadena& cadena_original) {
 }
 
 /*
- * Esta función genera todos los prefijos posibles de una cadena dada. Siendo estos
+ * @brief Esta función genera todos los prefijos posibles de una cadena dada. Siendo estos
  * cualquier subcadena de la original cuyo primer simbolo sea el primero de la cadena original.
  * Los prefijos generados se almacenan en un lenguaje para facilitar su impresion.
  *

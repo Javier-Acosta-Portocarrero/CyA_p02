@@ -20,8 +20,8 @@
 #include "alfabeto.h"
 
 /*
- * Constructor de la clase Alfabeto que crea un alfabeto a partir de una cadena
- * dada. Para cada símbolo en la cadena, este constructor lo añade al alfabeto,
+ * @brief Constructor de la clase Alfabeto que crea un alfabeto a partir de una cadena
+ * dada. Para cada símbolo en la cadena, lo añade al alfabeto,
  * almacenando los símbolos en un conjunto.
  *
  * @param cadena_auxiliar (objeto de la clase Cadena a partir del cual se
@@ -35,7 +35,7 @@ Alfabeto::Alfabeto(const Cadena& cadena_auxiliar) {
 }
 
 /*
- * Esta función permite insertar un símbolo nuevo en el alfabeto. 
+ * @brief Esta función permite insertar un símbolo nuevo en el alfabeto. 
  *
  * @param simobolo_a_agregar (el símbolo que se va a añadir al alfabeto).
  */
@@ -59,9 +59,9 @@ std::ostream& operator<<(std::ostream& out, const Alfabeto& alfabeto) {
 }
 
 /*
- * Sobrecarga del operador de salida <<, que  permite la salida en
+ * @brief Sobrecarga del operador de salida "<<", que  permite la salida en
  * formato de texto de un alfabeto. El formato es el de un conjunto, con los
- * símbolos separados por comas y encerrados entre llaves.
+ * símbolos separados por comas y entre llaves.
  *
  * @param out (flujo de salida en el que se imprimirá el alfabeto).
  * @param alfabeto (el objeto de la clase Alfabeto que se imprimirá).

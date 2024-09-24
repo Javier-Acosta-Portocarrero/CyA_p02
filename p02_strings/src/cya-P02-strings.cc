@@ -11,7 +11,7 @@
 // Contiene la funcion main del proyecto que usa las clases alfabeto, 
 // lenguaje, cadena, simbolo e intermediario_ficheros, para asi conseguir
 // simular todos los objetivos propuestos en la practica
-// Referencias:
+// Referencias: Hace uso de la clase IntermediarioFicheros.
 // Enlaces de interes
 //
 // Historial de revisiones
@@ -38,6 +38,11 @@ int main(int argc, char *argv[]) {
     }
   }
   IntermediarioFicheros intermediario_programa(argv[1], argv[2], atoi(argv[3]));
+  if (!intermediario_programa.AbiertoCorrectamente()) {
+    std::cerr << "Alguno de los ficheros no se ha podido abrir correctamente." 
+              << std::endl << "Finalizando programa" << std::endl;
+    return 1;
+  }
   intermediario_programa.RealizarOperacion();
   return 0;
 }

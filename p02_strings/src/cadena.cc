@@ -21,8 +21,8 @@
 #include "cadena.h"
 
 /*
- * Constructor de la clase Cadena que forma una secuencia de símbolos a 
- * partir de una cadena de caracteres. Por cada carácter de la cadena de 
+ * @brief Constructor de la clase Cadena que forma una secuencia de símbolos a 
+ * partir de una cadena de caracteres. Por cada caracter de la cadena de 
  * entrada se crea un objeto Simbolo y se añade a un vector.
  *
  * @param cadena_cruda (cadena de caracteres a partir de la cual se crea
@@ -36,7 +36,7 @@ Cadena::Cadena(std::string cadena_cruda) {
 }
 
 /*
- * Sobrecarga del operador salida "<<"", el cual permite la impresión de un
+ * @brief Sobrecarga del operador salida "<<", el cual permite la impresión de un
  * objeto Cadena en un flujo de salida. Si la cadena está vacía, imprime '&' el simbolo
  * específico que representa a la cadena vacia, constante definida por "CADENA_VACIA", 
  * de lo contrario imprime los símbolos que contiene.
@@ -58,7 +58,7 @@ std::ostream& operator<<(std::ostream& out, const Cadena& cadena) {
 }
 
 /*
- * Sobrecarga del operador de entrada ">>""", permitiendo este leer una Cadena desde 
+ * @brief Sobrecarga del operador de entrada ">>", permitiendo este leer una Cadena desde 
  * un flujo de entrada. Los caracteres leídos son convertidos en símbolos y 
  * almacenados en el vector que compone la clase Cadena.
  *
@@ -79,7 +79,7 @@ std::istream& operator>>(std::istream& in, Cadena& cadena) {
 }
 
 /*
- * Sobrecarga del operador menor "<"", cuyo finalidad es la de comparar dos objetos de la 
+ * @brief Sobrecarga del operador menor "<", cuyo finalidad es la de comparar dos objetos de la 
  * clase Cadena. La comparación se realiza en base a la longitud de estas.
  *
  * @param cadena_a_comparar (la cadena con la que se realizará la comparación).
@@ -101,7 +101,7 @@ bool Cadena::operator<(const Cadena& cadena_a_comparar) const {
 }
 
 /*
- * Metodo que devuelve el símbolo que está en una posición específica 
+ * @brief Metodo que devuelve el símbolo que está en una posición específica 
  * de la cadena. 
  *
  * @param posicion (la posición del símbolo que se quiere devolver).
@@ -113,7 +113,7 @@ Simbolo Cadena::DevolverPosicion(int posicion) const {
 }
 
 /*
- * Metodo que permite concatenar un símbolo al final de la cadena.
+ * @brief Metodo que permite concatenar un símbolo al final de la cadena.
  *
  * @param simbolo_a_concatenar (el símbolo que se concatenara a la cadena).
  */
@@ -123,7 +123,7 @@ void Cadena::ConcatenarSimbolo(const Simbolo& simbolo_a_concatenar) {
 }
 
 /*
- * Metodo que devuelve la longitud de la cadena (es decir, la cantidad de 
+ * @brief Metodo que devuelve la longitud de la cadena (es decir, la cantidad de 
  * símbolos que contiene).
  *
  * @return la cantidad de símbolos presentes en la cadena.
@@ -134,7 +134,7 @@ int Cadena::LongitudCadena() const {
 }
 
 /*
- * Meotodo que genera y devuelve  inversa de la cadena desde la que se llama. 
+ * @brief Meotodo que genera y devuelve  inversa de la cadena desde la que se llama. 
  * La inversa se obtiene invirtiendo el orden de los símbolos 
  * de la cadena original.
  *

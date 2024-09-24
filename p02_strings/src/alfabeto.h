@@ -18,11 +18,10 @@
 // Historial de revisiones
 // 21/09/2024 - Creacion (primera version) del codigo
 
-#include <iostream>
-
 #ifndef ALFABETO_H
 #define ALFABETO_H
 
+#include <iostream>
 #include <set>
 #include "simbolo.h"
 #include "cadena.h"

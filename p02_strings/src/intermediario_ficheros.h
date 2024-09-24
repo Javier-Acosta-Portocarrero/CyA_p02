@@ -22,7 +22,6 @@
 #define INTERMEDIARIO_FICHEROS_H
 
 #include <fstream>
-#include <cstdlib>
 #include <sstream>
 #include "lenguaje.h"
 #include "alfabeto.h"
@@ -32,6 +31,8 @@ class IntermediarioFicheros {
   IntermediarioFicheros(std::string fichero_entrada = "fichero_entrada.txt", std::string fichero_salida = "fichero_salida.txt", int opcode = 1); 
 
   ~IntermediarioFicheros();
+
+  bool AbiertoCorrectamente() const;
 
   void RealizarOperacion(); 
  private:

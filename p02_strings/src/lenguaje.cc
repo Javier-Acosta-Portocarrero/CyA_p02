@@ -21,7 +21,7 @@
 #include "lenguaje.h"
 
 /*
- * Metodo que inserta una cadena nueva en el lenguaje. 
+ * @brief Metodo que inserta una cadena nueva en el lenguaje. 
  *
  * @param cadena_a_agregar (cadena a ser agregada al lenguaje).
  */
@@ -32,7 +32,7 @@ void Lenguaje::InsertarCadena(const Cadena& cadena_a_agregar) {
 
 
 /*
- * Sobrecarga del operador de salida "<<"" para la clase Lenguaje que imprime el 
+ * @brief Sobrecarga del operador de salida "<<" para la clase Lenguaje que imprime el 
  * conjunto de cadenas pertenecientes al lenguaje, siendo estas imprimidas 
  * separadas por comas y entre llaves para respetar la representacion de un conjunto.
  *
@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& out, const Lenguaje& lenguaje) {
 }
 
 /*
- * Sobrecarga del operador de entrada ">>"" para la clase Lenguaje que permite 
+ * @brief Sobrecarga del operador de entrada ">>" para la clase Lenguaje que permite 
  * la lectura de un lenguaje a traves de un flujo de entrada, usando para eso
  * distintas tecnicas de control de flujo.
  *
